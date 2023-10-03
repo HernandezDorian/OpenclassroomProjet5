@@ -37,7 +37,6 @@ async function delay(t) {
 	slidenow = v;
 	img.src=slides[v].image;
 	p_banner.innerHTML = slides[v].tagLine;
-	console.log("dotclick")
 	for (let index = 0; index < dot.length; index++) {
 		if (index != v) {
 			dot[index].classList.remove("dot_selected");	
@@ -57,8 +56,7 @@ async function autodefile(t){
 	
 	for (slidenow; slidenow < slides.length+1; slidenow++) {
 		if (slidenow == 4) {
-			slidenow = 0
-			console.log("if" + slidenow)		
+			slidenow = 0	
 		}
 		
 		// slidenow = index
