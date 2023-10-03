@@ -58,12 +58,7 @@ async function autodefile(t){
 		if (slidenow == 4) {
 			slidenow = 0	
 		}
-		
-		// slidenow = index
 		dotclick(slidenow);
-		// console.log("auto" + index)
-		// slidenow++
-		// img.src=slides[index].image;
 		
 		await delay(t);
 		
@@ -74,22 +69,16 @@ autodefile(5000); // Défilement automatique de l'image ici changer le chiffre p
 
 function rightArrow() {
 	if (slidenow < 3) {
-		// img.src=slides[slidenow+=1].image;	
 		dotclick(slidenow+=1);	
 	} else {
-		// img.src=slides[0].image;
 		dotclick(0);
-		// slidenow = 0	
 	}
 }; // Flèche de gauche
 
 function leftArrow() {
 	if (slidenow > 0) {
-		// img.src=slides[slidenow-=1].image;
 		dotclick(slidenow-=1);		
 	} else {
-		// img.src=slides[3].image;
-		// slidenow = 3	
 		dotclick(3);
 	}
 }; // Flèche de droite
