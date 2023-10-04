@@ -1,3 +1,4 @@
+// Déclarations des variables globales : 
 const slides = [
 	{
 		"image":"assets/images/slideshow/slide1.jpg",
@@ -45,13 +46,6 @@ async function delay(t) {
 		}}
 }; // Déclanche le défilement en changeant les dots
 
-function detectdot(){
-	for (let index = 0; index < dot.length; index++) {
-		dot[index].addEventListener("click", function(){
-			dotclick(dot.indexOf(this))
-	})
-}} // Ajoute un écouteur dévenement sur tous les dots du array
-
 async function autodefile(t){
 	
 	for (slidenow; slidenow < slides.length+1; slidenow++) {
@@ -64,8 +58,6 @@ async function autodefile(t){
 		
 	}
 }; // Fonction de défilementt automatique du carroussel 
-
-autodefile(5000); // Défilement automatique de l'image ici changer le chiffre pour régler le temps en ms (Actuellement 5 secondes donc 5 000ms)
 
 function rightArrow() {
 	if (slidenow < 3) {
@@ -83,9 +75,16 @@ function leftArrow() {
 	}
 }; // Flèche de droite
 
+function detectdot(){
+	for (let index = 0; index < dot.length; index++) {
+		dot[index].addEventListener("click", function(){
+			dotclick(dot.indexOf(this))
+	})
+}} // Ajoute un écouteur dévenement sur tous les dots du array via une boucle for
 
+autodefile(5000); // Défilement automatique de l'image ici changer le chiffre pour régler le temps en ms (Actuellement 5 secondes donc 5 000ms)
 
-detectdot() 
+detectdot(); // Ici on appel les écouteurs d'évenement sur les points
 
 arrowleft.addEventListener("click", function(){
 	leftArrow()
